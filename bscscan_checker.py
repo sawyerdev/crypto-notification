@@ -66,6 +66,7 @@ class TheProgram:
                 print(res)
                 if len(self.amount) >= 100:
                     self.amount.clear()
+                    continue
             else:
                 print(f"Total USDT: ${now_value}")
 
