@@ -43,10 +43,13 @@ class TheProgram:
 
         server = smtplib.SMTP('smtp.office365.com: 587')
         server.starttls()
-
-        server.login(msg['From'], password)
-        server.sendmail(msg['From'], msg['To'], msg.as_string())
-
+        
+        try:
+            server.login(msg['From'], password)
+            server.sendmail(msg['From'], msg['To'], msg.as_string())
+        except Exception as err:
+            print(err)
+            
     def match_values(self, now, last):
         if now == last:
             return "No new transactions..."
