@@ -51,7 +51,7 @@ class TheProgram:
         if now == last:
             return "No new transactions..."
         if now > last:
-            amount_received = now - last
+            self.amount_received = now - last
             print('\n======== READY TO SEND EMAIL AFTER NEW VALUE ALERT! ========\n')
             self.send_mail()
             self.amount.clear()
