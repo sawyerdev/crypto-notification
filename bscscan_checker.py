@@ -21,9 +21,6 @@ class Requester:
         token_amount = small_token/1000000000000000000
         return token_amount
 
-#Using USDT contract as example
-do_request = Requester("0x55d398326f99059ff775485246999027b3197955","WALLET_ADDRESS","BSCSCAN_API_KEY")
-
 class TheProgram:
     def __init__(self):
         self.amount = []
@@ -75,5 +72,7 @@ class TheProgram:
             self.amount.append(now_value)
             sleep(1800) #checking every 30 minutes
 
+#Using USDT contract as example
+do_request = Requester("0x55d398326f99059ff775485246999027b3197955","WALLET_ADDRESS","BSCSCAN_API_KEY")
 main = TheProgram()
 main.main()
