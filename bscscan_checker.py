@@ -18,7 +18,7 @@ class Requester:
         data = json.loads(req_text)
 
         small_token = float(data['result'])
-        token_amount = small_token/1000000000000000000
+        token_amount = small_token / (10 ** 18)
         return token_amount
 
 class TheProgram:
